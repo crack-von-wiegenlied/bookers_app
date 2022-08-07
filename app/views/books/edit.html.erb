@@ -1,5 +1,25 @@
 <h1>Editing Book</h1>
 
+<% if @book.errors.count == 1 %>
+    <div class ="error-area">
+      <p class ="error-count-text"><%= @book.errors.count %> error prohibited this book from being saved:</p>
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li class ="error-message"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% elsif @book.errors.count == 2 %>
+    <div class ="error-area">
+      <p class ="error-count-text"><%= @book.errors.count %> errors prohibited this book from being saved:</p>
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li class ="error-message"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
 <%= form_with model: @book do |f| %>
 <label>Title</label>
 <div class="field">
