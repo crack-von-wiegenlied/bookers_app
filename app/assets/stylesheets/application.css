@@ -41,7 +41,11 @@ td {
 label{
   display: block;
 }
-
+gi
 .field ,.actions{
   margin-bottom: 10px;
+}
+
+.success-message{
+  color: green;
 }
